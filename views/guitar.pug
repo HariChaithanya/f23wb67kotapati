@@ -6,11 +6,12 @@ block content
 
   .container-fluid
     .row
-      each guitar in results
-        .col-sm-2       
+      each guitar,index in results
+        div(class="col-sm-2" onclick=`buy(${index})`)       
           h3 #{guitar.guitar_type}
           p Guitar Price: $#{guitar.guitar_price}
           p Guitar Color #{guitar.guitar_color}
-  
-  
-    
+  script.
+    function buy(index) {
+        alert(`You purchased : ${index}`)
+    }
